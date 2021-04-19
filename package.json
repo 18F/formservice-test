@@ -77,7 +77,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js && rm -rf _site &&  mv build ./_site",
-    "federalist": "node scripts/build.js && rm -rf _site && mv build ./_site && yarn start",
+    "federalist": "node scripts/build.js && rm -rf _site && mv build ./_site && serve -s _site -l 3000",
     "serve": "serve -s _site -l 3000",
     "test": "node scripts/test.js"
   },
