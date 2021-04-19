@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf _site &&  mv build ./_site",
-    "federalist": "react-scripts build && rm -rf _site &&  mv build ./_site",
+    "federalist": "react-scripts build && rm -rf _site && mv build ./_site",
     "serve": "serve -s build -l 3000",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
