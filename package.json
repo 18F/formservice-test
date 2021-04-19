@@ -18,6 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "build": "react-scripts build && mv build ./_site || move build ./_sites",
     "federalist": "react-scripts build && mv build ./_site || move build ./_sites",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
