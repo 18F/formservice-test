@@ -75,7 +75,7 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "start": "serve -s _site -l 3000",
+    "start": "node scripts/start.js",
     "build": "node scripts/build.js && rm -rf _site &&  mv build ./_site",
     "federalist": "node scripts/build.js && rm -rf _site && mv build ./_site",
     "serve": "serve -s _site -l 3000",
