@@ -1,9 +1,27 @@
 import React from "react";
 import USWDS from "uswds/src/js/components";
+// tslint:disable-next-line:no-submodule-imports
+// import '@cmsgov/design-system-core/dist/index.css';
+// tslint:disable-next-line:no-submodule-imports
+import '@cmsgov/design-system/dist/css/index.css';
 const { table } = USWDS;
 
-const API_KEY =
-  process.env.NODE_ENV === "development" && process.env.REACT_APP_FORMIO_API;
+// const API_KEY =
+//   process.env.NODE_ENV === "development" && process.env.REACT_APP_FORMIO_API;
+ const Spinner = () => {
+    return (
+      <div
+        className="ds-u-display--flex ds-u-justify-content--center ds-u-align-items--center"
+        style={{ position: 'absolute', width: '100%', height: '100%', top: '0', right: '24rem' }}
+      >
+        <span
+          className="ds-c-spinner ds-c-spinner--filled ds-u-fill--background-inverse ds-u-color--base-inverse"
+          aria-valuetext="Loading"
+          role="progressbar"
+        />
+      </div>
+    );
+  };
 
 const TableRows = ({ data }) => {
   let tableData = [];
@@ -25,9 +43,11 @@ const TableRows = ({ data }) => {
 
 function DataTable(props) {
   const [data, setData] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
   const ref = document.body;
 
   const getTestData = async () => {
+    setLoading(true);
     const response = await fetch(
       `https://dev-portal.fs.gsa.gov/dev/federalistapp/submission`,
       {
@@ -49,6 +69,7 @@ function DataTable(props) {
     // }
     const data = await response.json();
     setData(data);
+    setLoading(false);
   };
 
   React.useEffect(() => {
@@ -62,7 +83,7 @@ function DataTable(props) {
   }, [ref]);
 
   return (
-    <div>
+    <div className="ds-u-padding--2" style={{ position: 'relative' }}>
       <div className="usa-table-container--scrollable usa-table--striped">
         <table className="usa-table usa-table--borderless">
           <caption>Form Service Data</caption>
@@ -96,6 +117,7 @@ function DataTable(props) {
         />
       </div>
       <button className="usa-button usa-button--big usa-button--unstyled" onClick={getTestData}>REFRESH DATA</button>
+      {loading && <Spinner />}
     </div>
   );
 }
