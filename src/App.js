@@ -1,15 +1,13 @@
-// import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import 'uswds/dist/css/uswds.min.css';
+import DataTable from './components/table'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-         FORM SERVICE.
-        </p>
-      </header>
+    <div style={{ marginLeft :'5rem'}}>
+          <DataTable />    
     </div>
   );
 }
