@@ -64,8 +64,8 @@ function DataTable(props) {
   return (
     <div>
       <div className="usa-table-container--scrollable usa-table--striped">
-        <table className="usa-table usa-table--borderless usa-table--compact">
-          <caption>FORM DATA</caption>
+        <table className="usa-table usa-table--borderless">
+          <caption>Form Service Data</caption>
           <thead>
             <tr>
               <th data-sortable scope="col" role="columnheader">
@@ -95,6 +95,7 @@ function DataTable(props) {
           aria-live="polite"
         />
       </div>
+      <button className="usa-button usa-button--big usa-button--unstyled" onClick={getTestData}>REFRESH DATA</button>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import DataTable from './components/table'
 
 function App() {
   return (
-    <div style={{ marginLeft :'5rem'}}>
+    <div style={{ marginLeft :'25rem', marginTop: '5rem'}}>
           <DataTable />    
     </div>
   );
