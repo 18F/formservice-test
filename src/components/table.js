@@ -56,7 +56,7 @@ function DataTable(props) {
         // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
         // credentials: 'same-origin', // include, *same-origin, omit
         headers: {
-          "x-token": "vBEJbMK6DAydFjBitmLbB4ndBhHZpm",
+          "x-token": process.env.FORMIO_TOKEN,
           // 'Content-Type': 'application/json'
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
