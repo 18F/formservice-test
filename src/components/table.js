@@ -86,7 +86,7 @@ function DataTable(props) {
     <div className="ds-u-padding--2" style={{ position: 'relative' }}>
       <div className="usa-table-container--scrollable usa-table--striped">
         <table className="usa-table usa-table--borderless">
-          <caption>Form Service Data</caption>
+          <caption>FORM INFORMATION</caption>
           <thead>
             <tr>
               <th data-sortable scope="col" role="columnheader">
